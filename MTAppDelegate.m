@@ -57,7 +57,7 @@ static NSString * const kMTAFParseAPIKey = @"YRQphUyGjtoTh9uowBnaezq3LAaWFhKx0gy
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     
     if (networkStatus != NotReachable) {
-        [self syncTrips];
+        [self syncObjects];
     }
 }
 
