@@ -1,5 +1,5 @@
 /*
-  PFObject+SyncObject.m
+  PFObject+MyObject.m
   MileTracker
 
   Created by Stine Richvoldsen on 1/24/13.
@@ -9,9 +9,9 @@
  
 */
 
-#import "PFObject+SyncObject.h"
+#import "PFObject+MyObject.h"
 
-@implementation PFObject (SyncObject)
+@implementation PFObject (MyObject)
 
 + (PFObject *)tr_objectWithData:(id)data objectId:(NSString *)objectId
 {
