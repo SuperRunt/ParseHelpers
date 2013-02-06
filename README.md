@@ -1,3 +1,5 @@
+Parse Helpers for iOS
+
 Parse (parse.com) is a great alternative to creating your own service for storage of data, 
 but I ran into some issues with the Parse iOS SDK. Mostly dealing with creating, updating 
 and deleting of PFObjects while offline. There's obviously more than one way to solve 
