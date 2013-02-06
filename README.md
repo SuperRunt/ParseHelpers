@@ -11,8 +11,12 @@ methods for creating and syncing objects.
 
 When offline, I store any updates or new entries using CoreData. You can see the data 
 structure and methods creating and fetching stored objects in the UnsyncedObjects class.
+Since you can't just store a PFObject 'as is' in a persistent store, I also created a 
+value transformer for it. (Note how I deal with several user accounts in same app here 
+and in the UnsyncedObject class).
 
 In the app delegate, you'll see how I sync the data with the server when back online. 
+
 
 I tried to use the PFQueryTableViewController, but I couldn't since the objects property 
 (the list of PFObjects returned when the controller runs it's queryForTable). The 
