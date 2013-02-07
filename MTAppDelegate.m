@@ -64,12 +64,7 @@ static NSString * const kMTAFParseAPIKey = @"YRQphUyGjtoTh9uowBnaezq3LAaWFhKx0gy
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     
-    if (networkStatus != NotReachable) {
-        [self syncObjects];
-    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
