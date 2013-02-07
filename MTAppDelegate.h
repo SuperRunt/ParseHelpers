@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Reachability;
 
-@interface MTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MTAppDelegate : UIResponder <UIApplicationDelegate>{
+    Reachability* hostReach;
+    Reachability* internetReach;
+}
+
 
 @property (strong, nonatomic) UIWindow *window;
 

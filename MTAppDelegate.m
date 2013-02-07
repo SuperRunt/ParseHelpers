@@ -26,9 +26,20 @@ static NSString * const kMTAFParseAPIKey = @"YRQphUyGjtoTh9uowBnaezq3LAaWFhKx0gy
 {
     [Parse setApplicationId:kMTAFParseAPIApplicationId clientKey:kMTAFParseAPIKey];
     
-    // register transformer for usnynced objects
-    MTUnsyncedObjectValueTransformer *transformer = [[MTUnsyncedObjectValueTransformer alloc] init];
-    [NSValueTransformer setValueTransformer:transformer forName:@"MTUnsyncedObjectValueTransformer"];
+    // register transformer
+    MTUnsyncedTripValueTransformer *transformer = [[MTUnsyncedTripValueTransformer alloc] init];
+    [NSValueTransformer setValueTransformer:transformer forName:@"MTUnsyncedTripValueTransformer"];
+    
+    // reachability notifier
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+    
+    //	hostReach = [Reachability reachabilityWithHostName: @"api.parse.com"];
+    //	[hostReach startNotifier];
+    //	[self updateInterfaceWithReachability: hostReach];
+	
+    internetReach = [Reachability reachabilityForInternetConnection];
+	[internetReach startNotifier];
+	[self updateInterfaceWithReachability: internetReach];
     
     return YES;
 }
@@ -65,6 +76,15 @@ static NSString * const kMTAFParseAPIKey = @"YRQphUyGjtoTh9uowBnaezq3LAaWFhKx0gy
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void) updateInterfaceWithReachability: (Reachability*) curReach
+{
+    //        NetworkStatus netStatus = [curReach currentReachabilityStatus];
+    if(curReach == internetReach) {
+        [self syncTrips];
+    }
+}
+
 
 - (void)syncObjects
 {
