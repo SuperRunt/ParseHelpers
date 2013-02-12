@@ -19,8 +19,8 @@
 
 @implementation MTAppDelegate
 
-static NSString * const kMTAFParseAPIApplicationId = @"Vd1Qs3EyW8r7JebCa7n9X6WXjvMxa711HJfKvWqJ";
-static NSString * const kMTAFParseAPIKey = @"YRQphUyGjtoTh9uowBnaezq3LAaWFhKx0gysI546";
+static NSString * const kMTAFParseAPIApplicationId = @"YOUR-ID-HERE";
+static NSString * const kMTAFParseAPIKey = @"YOUR-KEY-HERE";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
