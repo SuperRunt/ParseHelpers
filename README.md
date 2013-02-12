@@ -19,7 +19,7 @@ In the app delegate, you'll see how I sync the data with the server when back on
 
 
 I tried to use the PFQueryTableViewController, but I couldn't since the objects property 
-(the list of PFObjects returned when the controller runs it's queryForTable). The 
+(the list of PFObjects returned when the controller runs it's queryForTable) is readonly. The 
 LogViewController is a UITableViewController subclass, and it has a method called 
 syncWithUnsavedData that 'mixes' the cached objects and the objects that are in the 
 persistent store. It's a little messy, but it works...
